@@ -1,27 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import "./estilo.css";
 class ListaDeCategorias extends Component {
-    _handleEvenoInput(e)
-    {
-        if (e.key === "Enter"){
-            this.props.addCategoria(e.target.value);
-        }
+  _handleEventoInput(e) {
+    if (e.key === "Enter") {
+      this.props.addCategoria(e.target.value);
     }
-    render() {
-        return (
-            <section>
-                <ul>
-                    {this.props.categorias.map((categoria, index)=>{
-                        return <li key={index}>{categoria}</li>
-                    })}
-                </ul>
-                
-                <input
-                    type="Text"
-                    placeholder='Insira a Categoria'
-                    onKeyUp={this._handleEvenoInput.bind(this)} />
-            </section>
-        );
-    }
+  }
+  render() {
+    return (
+      <section className="lista-categorias">
+        <ul className="lista-categorias_lista">
+          {this.props.categorias.map((categoria, index) => {
+            return (
+              <li key={index} className="lista-categorias_item">
+                {categoria}
+              </li>
+            );
+          })}
+        </ul>
+        <input
+          type="text"
+          className="lista-categorias_input"
+          placeholder="Adicionar Categoria"
+          onKeyUp={this._handleEventoInput.bind(this)}
+        />
+      </section>
+    );
+  }
 }
 
 export default ListaDeCategorias;
