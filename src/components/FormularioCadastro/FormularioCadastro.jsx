@@ -36,6 +36,11 @@ class FormularioCadastro extends Component {
           className="form-cadastro_input"
           onChange={this._handleMudancaTitulo.bind(this)}
         />
+        <select className="form-cadastro_input">
+          {this.props.categorias.map(categoria=>{
+            return <option>{categoria}</option>
+          })}
+        </select>
         <textarea
           rows={15}
           placeholder="Escreva sua nota..."
