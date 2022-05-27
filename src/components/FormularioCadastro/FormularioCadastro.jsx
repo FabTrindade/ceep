@@ -44,7 +44,7 @@ class FormularioCadastro extends Component {
           onChange={this._handleMudancaCategoria.bind(this)}
           className="form-cadastro_input">
           <option>Sem Categoria</option>
-          {this.props.categorias.map((categoria, index)=>{
+          {this.props.categorias.categorias.map((categoria, index)=>{
             return <option key={index}>{categoria}</option>
           })}
         </select>
