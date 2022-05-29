@@ -24,9 +24,11 @@ export default class ArrayDeNotas {
 
     criarNota(titulo, texto, categoria) {
         this.notas.push(new Notas(titulo, texto, categoria));
+        this.notificar();
     }
 
     deletarNota(index) {
         this.notas.splice(index, 1);
+        this.notificar();
     }
 }
