@@ -7,6 +7,10 @@ export default class Categorias {
     inscrever(func) {
         this.inscritos.push(func);
     }
+    
+    desinscrever(func) {
+        this.inscritos = this.inscritos.filter(f => f !== func);
+    }
 
     notificar() {
         this.inscritos.forEach(func => {

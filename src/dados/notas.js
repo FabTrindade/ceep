@@ -9,11 +9,15 @@ class Notas {
 export default class ArrayDeNotas {
     constructor() {
         this.notas = [];
-        this.inscritos =[];
+        this.inscritos = [];
     }
 
     inscrever(func) {
         this.inscritos.push(func);
+    }
+
+    desinscrever(func) {
+        this.inscritos = this.inscritos.filter(f => f !== func);
     }
 
     notificar() {
